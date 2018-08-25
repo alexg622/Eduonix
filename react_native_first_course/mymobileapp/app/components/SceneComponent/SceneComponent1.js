@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {AppRegistry, Button, Text, View} from 'react-native';
+import {Button, Text, View} from 'react-native';
 
 export default class SceneComponent1 extends Component{
   constructor(){
@@ -29,5 +29,3 @@ export default class SceneComponent1 extends Component{
     )
   }
 }
-
-AppRegistry.registerComponent('SceneComponent1', () => SceneComponent1)

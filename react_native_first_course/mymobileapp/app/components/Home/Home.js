@@ -15,6 +15,9 @@ class Home extends Component{
         <Button title="Go to Scene 1"
           onPress={() => this.props.navigation.navigate("Scene1")}
         />
+        <Button title="AsyncStorageComponent"
+          onPress={() => this.props.navigation.navigate("AsyncStorageComponent")}
+        />
         <Button title="Go to Scene 2"
           onPress={() => this.props.navigation.navigate("Scene2")}
         />

@@ -15,6 +15,7 @@ import StatusBarComponent from './app/components/StatusBarComponent/StatusBarCom
 import ToolBarAndroidComponent from './app/components/ToolBarAndroidComponent/ToolBarAndroidComponent'
 import IconsComponent from './app/components/IconsComponent/IconsComponent'
 import ListViewComponent from './app/components/ListViewComponent/ListViewComponent'
+import AsyncStorageComponent from './app/components/AsyncStorageComponent/AsyncStorageComponent'
 import FetchComponent from './app/components/FetchComponent/FetchComponent'
 import SceneComponent1 from './app/components/SceneComponent/SceneComponent1'
 import SceneComponent2 from './app/components/SceneComponent/SceneComponent2'
@@ -38,6 +39,7 @@ const styles = StyleSheet.create({
 
 const AppStackNavigator = createStackNavigator({
   Home: Home,
+  AsyncStorageComponent: AsyncStorageComponent,
   Scene2: SceneComponent2,
   Scene1: SceneComponent1
 })
