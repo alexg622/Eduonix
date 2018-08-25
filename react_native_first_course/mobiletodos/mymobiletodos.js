@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Text, View, Button, StatusBar, Dimensions, StyleSheet} from 'react-native'
+import AddButton from './app/components/AddButton/AddButton'
 import Todos from './app/components/todos/Todos'
 
 export default class mymobiletodos extends Component{
@@ -9,7 +10,8 @@ export default class mymobiletodos extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <StatusBar hidden={true} /> 
+        <StatusBar hidden={true} />
+        <AddButton navigate={this.props.navigation.navigate}/>
         <Button
           title="Todos"
           onPress={() => this.props.navigation.navigate("Todos")}

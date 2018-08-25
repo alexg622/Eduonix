@@ -52,15 +52,20 @@ export default class Todos extends Component{
 
   render(){
     return(
-      <ListView
+      <View style={styles.container}>
+        <ListView
         dataSource={this.state.todoDataSource}
         renderRow={this.renderRow}
-      />
+        />
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#2b4970"
+  },
   row: {
     flexDirection: 'row',
     justifyContent: 'center',
