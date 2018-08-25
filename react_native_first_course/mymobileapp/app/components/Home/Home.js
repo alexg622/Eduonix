@@ -21,6 +21,10 @@ class Home extends Component{
         <Button title="Go to Scene 2"
           onPress={() => this.props.navigation.navigate("Scene2")}
         />
+        <Button
+          title="CameraRollComponent"
+          onPress={() => this.props.navigation.navigate("CameraRollComponent")}
+        />
       </View>
     )
   }
