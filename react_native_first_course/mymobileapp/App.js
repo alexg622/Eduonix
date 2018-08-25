@@ -7,13 +7,14 @@ import PickerComponent from './app/components/PickerComponent/PickerComponent'
 import SwitchComponent from './app/components/SwitchComponent/SwitchComponent'
 import StyledComponent from './app/components/StyledComponent/StyledComponent'
 import FlexComponent from './app/components/FlexComponent/FlexComponent'
+import FlexComponent2 from './app/components/FlexComponent2/FlexComponent2'
 
 
 export default class mymobileapp extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <FlexComponent />
+        <FlexComponent2 />
       </View>
     )
   }
