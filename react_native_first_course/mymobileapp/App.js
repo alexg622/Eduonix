@@ -13,6 +13,7 @@ import ButtonComponent from './app/components/ButtonComponent/ButtonComponent'
 import ScrollViewComponent from './app/components/ScrollViewComponent/ScrollViewComponent'
 import StatusBarComponent from './app/components/StatusBarComponent/StatusBarComponent'
 import ToolBarAndroidComponent from './app/components/ToolBarAndroidComponent/ToolBarAndroidComponent'
+import ClipboardComponent from './app/components/ClipboardComponent/ClipboardComponent'
 import IconsComponent from './app/components/IconsComponent/IconsComponent'
 import ListViewComponent from './app/components/ListViewComponent/ListViewComponent'
 import GeolocationComponent from './app/components/GeolocationComponent/GeolocationComponent'
@@ -42,7 +43,8 @@ const styles = StyleSheet.create({
 const AppStackNavigator = createStackNavigator({
   Home: Home,
   CameraRollComponent: CameraRollComponent,
-  GeolocationComponent: GeolocationComponent, 
+  ClipboardComponent: ClipboardComponent,
+  GeolocationComponent: GeolocationComponent,
   AsyncStorageComponent: AsyncStorageComponent,
   Scene2: SceneComponent2,
   Scene1: SceneComponent1
