@@ -16,22 +16,28 @@ import ToolBarAndroidComponent from './app/components/ToolBarAndroidComponent/To
 import IconsComponent from './app/components/IconsComponent/IconsComponent'
 import ListViewComponent from './app/components/ListViewComponent/ListViewComponent'
 import FetchComponent from './app/components/FetchComponent/FetchComponent'
-
+import SceneComponent1 from './app/components/SceneComponent/SceneComponent1'
+import SceneComponent2 from './app/components/SceneComponent/SceneComponent2'
+import Home from './app/components/Home/Home'
+import {createStackNavigator} from 'react-navigation'
 
 export default class mymobileapp extends Component{
+
   render(){
     return(
-      <View style={styles.container}>
-        <FetchComponent />
-      </View>
+      <AppStackNavigator />
     )
   }
 }
 
 const styles = StyleSheet.create({
-  // container: {
-  //   justifyContent: "center",
-  //   alignItems: "center"
-  // }
+  container: {
+    paddingTop: 50
+  }
 })
-AppRegistry.registerComponent('mymobileapp', () => mymobileapp)
+
+const AppStackNavigator = createStackNavigator({
+  Home: Home,
+  Scene2: SceneComponent2,
+  Scene1: SceneComponent1
+})

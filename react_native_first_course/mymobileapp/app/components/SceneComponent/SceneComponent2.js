@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {AppRegistry, Text, View} from 'react-native';
 
-export default class SceneComponent2 extends Component{
+export default class BoilerComponent extends Component{
   constructor(){
     super()
     this.state = {
@@ -12,10 +12,10 @@ export default class SceneComponent2 extends Component{
   render(){
     return(
       <View>
-        <Text>Scene2</Text>
+        <Text>Scene 2</Text>
       </View>
     )
   }
 }
 
-AppRegistry.registerComponent('SceneComponent2', () => SceneComponent2)
+AppRegistry.registerComponent('BoilerComponent', () => BoilerComponent)
