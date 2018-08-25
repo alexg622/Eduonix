@@ -8,13 +8,14 @@ import SwitchComponent from './app/components/SwitchComponent/SwitchComponent'
 import StyledComponent from './app/components/StyledComponent/StyledComponent'
 import FlexComponent from './app/components/FlexComponent/FlexComponent'
 import FlexComponent2 from './app/components/FlexComponent2/FlexComponent2'
+import TouchableComponent from './app/components/TouchableComponent/TouchableComponent'
 
 
 export default class mymobileapp extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <FlexComponent2 />
+        <TouchableComponent />
       </View>
     )
   }
