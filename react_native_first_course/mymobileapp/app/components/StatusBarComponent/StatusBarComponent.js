@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, AppRegistry, StatusBar, Text, View} from 'react-native';
 
-const alertMessage = "This is your message"
-
 export default class StatusBarComponent extends Component{
   constructor(props){
     super(props)

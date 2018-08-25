@@ -12,13 +12,15 @@ import TouchableComponent from './app/components/TouchableComponent/TouchableCom
 import ButtonComponent from './app/components/ButtonComponent/ButtonComponent'
 import ScrollViewComponent from './app/components/ScrollViewComponent/ScrollViewComponent'
 import StatusBarComponent from './app/components/StatusBarComponent/StatusBarComponent'
+import ToolBarAndroidComponent from './app/components/ToolBarAndroidComponent/ToolBarAndroidComponent'
+import IconsComponent from './app/components/IconsComponent/IconsComponent'
 
 
 export default class mymobileapp extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <StatusBarComponent />
+        <IconsComponent />
       </View>
     )
   }
