@@ -10,7 +10,7 @@ export default class CameraRollComponent extends Component{
     }
   }
 
-  componentDidMount(){
+  componentWillMount(){
     console.log("herere");
     console.log(CameraRoll.getPhotos());
     CameraRoll.getPhotos({first: 5}).then(data => {
@@ -27,15 +27,48 @@ export default class CameraRollComponent extends Component{
   }
 
   render(){
+    if(!this.state.imagesLoaded){
+      return(
+        <ActivityIndicator
+          style={[styles.centering, styles.gray]}
+          size='large'
+          color='black'
+        />
+      )
+    }
     console.log(this.state.images);
     return(
       <View style={styles.container}>
-        <Text>Current Name: {this.state.name}</Text>
+        <ScrollView style={styles.container}>
+          <View style={styles.imageGrid}>
+            {this.state.images.map(image => <Image style={styles.image} key={image.uri} source={{uri: image.uri}}/>)}
+          </View>
+        </ScrollView>
       </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
-
+  container: {
+    height:58,
+    backgroundColor: 'lightgray'
+  },
+  imageGrid:{
+    flexDirection:'row',
+    justifyContent:'space-around',
+    marginTop:10
+  },
+  image: {
+    width:180,
+    height:180
+  },
+  centering: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding:8
+  },
+  gray: {
+    backgroundColor: 'gray'
+  }
 })
