@@ -11,13 +11,14 @@ import FlexComponent2 from './app/components/FlexComponent2/FlexComponent2'
 import TouchableComponent from './app/components/TouchableComponent/TouchableComponent'
 import ButtonComponent from './app/components/ButtonComponent/ButtonComponent'
 import ScrollViewComponent from './app/components/ScrollViewComponent/ScrollViewComponent'
+import StatusBarComponent from './app/components/StatusBarComponent/StatusBarComponent'
 
 
 export default class mymobileapp extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <ScrollViewComponent />
+        <StatusBarComponent />
       </View>
     )
   }
