@@ -33,6 +33,10 @@ class Home extends Component{
           title="CameraRollComponent"
           onPress={() => this.props.navigation.navigate("CameraRollComponent")}
         />
+        <Button
+          title="ShareComponent"
+          onPress={() => this.props.navigation.navigate("ShareComponent")}
+        />
       </View>
     )
   }

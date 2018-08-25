@@ -18,6 +18,7 @@ import IconsComponent from './app/components/IconsComponent/IconsComponent'
 import ListViewComponent from './app/components/ListViewComponent/ListViewComponent'
 import GeolocationComponent from './app/components/GeolocationComponent/GeolocationComponent'
 import CameraRollComponent from './app/components/CameraRollComponent/CameraRollComponent'
+import ShareComponent from './app/components/ShareComponent/ShareComponent'
 import AsyncStorageComponent from './app/components/AsyncStorageComponent/AsyncStorageComponent'
 import FetchComponent from './app/components/FetchComponent/FetchComponent'
 import SceneComponent1 from './app/components/SceneComponent/SceneComponent1'
@@ -44,6 +45,7 @@ const AppStackNavigator = createStackNavigator({
   Home: Home,
   CameraRollComponent: CameraRollComponent,
   ClipboardComponent: ClipboardComponent,
+  ShareComponent: ShareComponent, 
   GeolocationComponent: GeolocationComponent,
   AsyncStorageComponent: AsyncStorageComponent,
   Scene2: SceneComponent2,
