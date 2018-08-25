@@ -14,13 +14,15 @@ import ScrollViewComponent from './app/components/ScrollViewComponent/ScrollView
 import StatusBarComponent from './app/components/StatusBarComponent/StatusBarComponent'
 import ToolBarAndroidComponent from './app/components/ToolBarAndroidComponent/ToolBarAndroidComponent'
 import IconsComponent from './app/components/IconsComponent/IconsComponent'
+import ListViewComponent from './app/components/ListViewComponent/ListViewComponent'
+import FetchComponent from './app/components/FetchComponent/FetchComponent'
 
 
 export default class mymobileapp extends Component{
   render(){
     return(
       <View style={styles.container}>
-        <IconsComponent />
+        <FetchComponent />
       </View>
     )
   }
