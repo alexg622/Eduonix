@@ -16,10 +16,10 @@ export default class IconsComponent extends Component{
 
     return(
       <View style={styles.container}>
-      <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.loginWithFacebook}>
+        <Icon.Button name="facebook" backgroundColor="#3b5998" onPress={this.loginWithFacebook}>
         Login with Facebook
-      </Icon.Button>
-);
+        </Icon.Button>
+        <Icon name="rocket" size={30} color="#900" />
       </View>
     )
   }
@@ -27,7 +27,7 @@ export default class IconsComponent extends Component{
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 10
+    paddingTop: 30
   }
 })
 
