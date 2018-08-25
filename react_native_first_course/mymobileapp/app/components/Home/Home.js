@@ -22,6 +22,10 @@ class Home extends Component{
           onPress={() => this.props.navigation.navigate("Scene2")}
         />
         <Button
+          title="Go to GeolocationComponent"
+          onPress={() => this.props.navigation.navigate("GeolocationComponent")}
+        />
+        <Button
           title="CameraRollComponent"
           onPress={() => this.props.navigation.navigate("CameraRollComponent")}
         />
