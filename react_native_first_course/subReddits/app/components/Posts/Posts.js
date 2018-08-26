@@ -87,6 +87,7 @@ export default class Posts extends Component<Props> {
           <Picker.Item label="Books" value='books' />
           <Picker.Item label="Funny" value='funny' />
         </Picker>
+        <Text>Posts Returned: {this.state.limit}</Text>
         <Slider
           maximumValue={25}
           minimumValue={5}

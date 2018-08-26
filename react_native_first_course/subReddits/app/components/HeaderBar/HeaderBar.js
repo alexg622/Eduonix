@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Button, Text, View} from 'react-native';
 
-export default class HeaderBar extends Component<Props> {
+export default class HeaderBar extends Component {
   render() {
     return (
       <View style={styles.bar}>
-        <Text style={styles.text}>Subreddits</Text>
+        <Text style={styles.text}>SubReddit</Text>
       </View>
     );
   }

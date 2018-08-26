@@ -8,7 +8,8 @@ import PostDetails from './app/components/PostDetails/PostDetails'
 const RootStack = createStackNavigator(
   {
     Posts: Posts,
-    Details: PostDetails
+    Details: PostDetails,
+    Header: HeaderBar
   },
   {
     navigationOptions: {
