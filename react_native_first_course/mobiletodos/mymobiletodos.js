@@ -5,6 +5,7 @@ import Todos from './app/components/todos/Todos'
 
 export default class mymobiletodos extends Component{
   static navigationOptions = {
+    // title: "MobileTodos",
     header: null
   }
   render(){

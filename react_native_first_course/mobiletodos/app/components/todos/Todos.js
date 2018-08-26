@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Text, View, ListView, TouchableHighlight, StyleSheet} from 'react-native'
+import {Text, View, ListView, Image, AsyncStorage, Button, TouchableHighlight, StyleSheet} from 'react-native'
 
 export default class Todos extends Component{
   constructor(props){
@@ -12,6 +12,10 @@ export default class Todos extends Component{
     this.renderRow = this.renderRow.bind(this)
   }
 
+  static navigationOptions = {
+    header: null
+  }
+
   componentWillMount(){
     this.getTodos()
   }
@@ -21,30 +25,41 @@ export default class Todos extends Component{
   }
 
   getTodos(){
-    let todos = [
-      {text: "Todo one", completed: false},
-      {text: "Todo two", completed: false},
-      {text: "Todo three", completed: false},
-      {text: "Todo four", completed: false},
-      {text: "Todo five", completed: false}
-    ]
-
-    this.setState({
-      todoDataSource: this.state.todoDataSource.cloneWithRows(todos)
+    AsyncStorage.getItem('todos').then(value => {
+      if(value === undefined) {
+        console.log("No todos....");
+      } else {
+        let todos = JSON.parse(value)
+        this.setState({todoDataSource: this.state.todoDataSource.cloneWithRows(todos)})
+      }
     })
   }
 
   pressRow(todo){
-    console.log(todo);
+    console.log("pressiong");
+    console.log(this.props.navigation.navigate);
+    this.props.navigation.navigate('TodoDetails', { todo })
   }
 
   renderRow(todo){
+    let image
+    if(todo.completed){
+      image = <Image
+        style={styles.checkImage}
+        source={require("./checkmark.png")}
+      />
+    } else {
+      image = <Text></Text>
+    }
     return(
       <TouchableHighlight onPress={() => {
         this.pressRow(todo)
       }}>
         <View style={styles.row}>
           <Text style={styles.text}>{todo.text}</Text>
+          <View style={styles.check}>
+            {image}
+          </View>
         </View>
       </TouchableHighlight>
     )
@@ -56,6 +71,10 @@ export default class Todos extends Component{
         <ListView
         dataSource={this.state.todoDataSource}
         renderRow={this.renderRow}
+        />
+        <Button
+          title="Home"
+          onPress={() => this.props.navigation.navigate("mymobiletodos")}
         />
       </View>
     )
@@ -75,5 +94,13 @@ const styles = StyleSheet.create({
   },
   text: {
     flex:1
+  },
+  check: {
+    flex:1
+  },
+  checkImage: {
+    alignSelf: "flex-end",
+    height:25,
+    width:25
   }
 })
