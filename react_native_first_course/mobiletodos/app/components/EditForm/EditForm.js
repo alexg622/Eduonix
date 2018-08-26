@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 import {Text, View, TextInput, Switch, Button, AsyncStorage, StyleSheet} from 'react-native'
 
-export default class AddForm extends Component{
-  constructor(){
-    super()
+export default class EditForm extends Component{
+  constructor(props){
+    super(props)
     this.state = {
-      id: "",
-      text: "",
-      completed: false,
-      todos: []
+      id: this.props.navigation.getParam("todo").id,
+      text: this.props.navigation.getParam("todo").text,
+      completed: false
     }
   }
+
   static navigationOptions = {
     header: null
   }
@@ -25,15 +25,6 @@ export default class AddForm extends Component{
     })
   }
 
-  componentDidMount(){
-    this.generateId()
-  }
-
-  generateId(){
-    let id = Math.floor(Math.random() * 1000000000)
-    this.setState({id})
-  }
-
   onTextChange(value){
     this.setState({text: value})
   }
@@ -41,22 +32,22 @@ export default class AddForm extends Component{
   onCompletedChange(value){
     this.setState({completed: value})
   }
-  onSubmit(){
-    let todos = this.state.todos
-    todos.push({
-      id: this.state.id,
-      text: this.state.text,
-      completed: this.state.completed
-    })
-    AsyncStorage.setItem('todos', JSON.stringify(todos))
-    this.props.navigation.navigate('Todos')
-  }
 
-  getTodos(){
+  onSubmit(){
     AsyncStorage.getItem('todos').then(value => {
-      if(value !== undefined){
-        this.setState({todos: JSON.parse(value)})
+      let todos = JSON.parse(value)
+      for(let i=0; i<todos.length; i++){
+        if(todos[i].id === this.state.id){
+          todos.splice(i, 1)
+        }
       }
+      todos.push({
+        id: this.state.id,
+        text: this.state.text,
+        completed: this.state.completed
+      })
+      AsyncStorage.setItem('todos', JSON.stringify(todos))
+      this.props.navigation.navigate("Todos")
     })
   }
 

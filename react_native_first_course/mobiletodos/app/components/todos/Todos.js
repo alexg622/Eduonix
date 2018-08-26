@@ -30,14 +30,14 @@ export default class Todos extends Component{
         console.log("No todos....");
       } else {
         let todos = JSON.parse(value)
+        console.log(todos);
+        console.log("HHHERERERERE");
         this.setState({todoDataSource: this.state.todoDataSource.cloneWithRows(todos)})
       }
     })
   }
 
   pressRow(todo){
-    console.log("pressiong");
-    console.log(this.props.navigation.navigate);
     this.props.navigation.navigate('TodoDetails', { todo })
   }
 

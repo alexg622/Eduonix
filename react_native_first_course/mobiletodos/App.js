@@ -4,6 +4,7 @@ import { createStackNavigator } from 'react-navigation'
 import mymobiletodos from './mymobiletodos'
 import Todos from './app/components/todos/Todos'
 import TodoDetails from './app/components/TodoDetails/TodoDetails'
+import EditForm from './app/components/EditForm/EditForm'
 import AddForm from './app/components/AddForm/AddForm'
 import AddButton from './app/components/AddButton/AddButton'
 
@@ -22,6 +23,7 @@ export default class App extends Component<Props> {
 const AppStackNavigator = createStackNavigator({
   mymobiletodos: mymobiletodos,
   Todos: Todos,
+  EditForm: EditForm,
   AddForm: AddForm,
   TodoDetails: TodoDetails,
   AddButton: AddButton
