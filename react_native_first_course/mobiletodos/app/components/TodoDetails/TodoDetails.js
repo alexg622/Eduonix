@@ -22,15 +22,29 @@ export default class TodoDetails extends Component{
   }
 
   onDelete(){
-
+    AsyncStorage.getItem("todos").then(value => {
+      let todos = JSON.parse(value)
+      for(i=0; i<todos.length; i++){
+        if(todos[i].id === this.state.todo.id){
+          todos.splice(i, 1)
+        }
+      }
+      AsyncStorage.setItem('todos', JSON.stringify(todos))
+      this.props.navigation.navigate('Todos')
+    })
   }
 
   onShare(){
-
+    Share.share({
+      message: this.state.todo.text
+    })
+    .then(() => {
+      this.props.navigation.navigate("Todos")
+    })
+    .catch(error => console.log(error))
   }
 
   render(){
-
     return(
       <View style={styles.bigContainer}>
         <View style={styles.container}>
