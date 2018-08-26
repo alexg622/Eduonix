@@ -6,7 +6,8 @@ export default class Todos extends Component{
     super(props)
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
-      todoDataSource: ds
+      todoDataSource: ds,
+      todos: {}
     }
     this.pressRow = this.pressRow.bind(this)
     this.renderRow = this.renderRow.bind(this)
@@ -18,10 +19,12 @@ export default class Todos extends Component{
 
   componentWillMount(){
     this.getTodos()
+    this.setState({todos: this.getTodos()})
   }
 
   componentDidMount(){
     this.getTodos()
+    this.setState({todos: this.getTodos()})
   }
 
   getTodos(){
@@ -30,8 +33,6 @@ export default class Todos extends Component{
         console.log("No todos....");
       } else {
         let todos = JSON.parse(value)
-        console.log(todos);
-        console.log("HHHERERERERE");
         this.setState({todoDataSource: this.state.todoDataSource.cloneWithRows(todos)})
       }
     })
@@ -66,6 +67,9 @@ export default class Todos extends Component{
   }
 
   render(){
+    if(this.todos !== this.getTodos()) {
+      this.getTodos()
+    }
     return(
       <View style={styles.container}>
         <ListView

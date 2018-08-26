@@ -7,7 +7,7 @@ export default class EditForm extends Component{
     this.state = {
       id: this.props.navigation.getParam("todo").id,
       text: this.props.navigation.getParam("todo").text,
-      completed: false
+      completed: this.props.navigation.getParam("todo").completed
     }
   }
 
